@@ -1,6 +1,6 @@
 # Agent map — calorie tracker
 
-**Repository status:** documentation only; application code not started.
+**Repository status:** documentation only; application code not started. Stack: `docs/stack.md`.
 
 `CLAUDE.md` is a symlink to this file (same instructions for Claude Code and Cursor).
 
@@ -29,7 +29,8 @@ Personal mobile-first web app for **weight loss**: hero metric = **kcal deficit 
 ## How to work here
 
 1. Read this file first, then only what you need:
-   - **Why / positioning** → `docs/vision.md`
+   - **Product strategy** → `docs/product.md`
+   - **Positioning / risks** → `docs/vision.md`
    - **Formulas, MVP, screens, owner decisions** → `docs/product-spec.md`
    - **Stack** → `docs/stack.md` (when chosen)
 2. **Do not bloat** `AGENTS.md` — add detail to `docs/`, not here.
@@ -56,7 +57,8 @@ Personal mobile-first web app for **weight loss**: hero metric = **kcal deficit 
 
 | Question | File |
 |----------|------|
-| Vision, differentiation, risks | `docs/vision.md` |
+| Strategy, principles, anti-goals, roadmap | `docs/product.md` |
+| Positioning, differentiation, risks | `docs/vision.md` |
 | Formulas, screens, acceptance criteria | `docs/product-spec.md` |
 | Tech stack (TBD) | `docs/stack.md` |
 | Docs index | `docs/README.md` |

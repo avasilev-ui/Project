@@ -1,5 +1,7 @@
 # Product vision
 
+Strategy (principles, anti-goals, roadmap): [`product.md`](./product.md).
+
 ## What this is
 
 A **personal** mobile-first web app (PWA) for **weight loss**, built around one idea:
