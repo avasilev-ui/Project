@@ -1,0 +1,71 @@
+# Dependencies
+node_modules/
+
+# Build output (Vite)
+dist/
+dist-ssr/
+build/
+
+# Local Vite overrides
+*.local
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Tests (Vitest)
+coverage/
+
+# TypeScript
+*.tsbuildinfo
+
+# Caches
+.cache/
+.vite/
+.turbo/
+.eslintcache
+.stylelintcache
+
+# PWA dev output (vite-plugin-pwa)
+dev-dist/
+
+# Static hosts (optional deploy metadata)
+.vercel/
+.netlify/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors / IDEs
+.idea/
+*.swp
+*.swo
+*~
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Cursor (local session data; project rules can be committed)
+.cursor/*
+!.cursor/rules/
+
+# Misc
+*.pem
+*.key
+.npm
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*

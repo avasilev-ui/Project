@@ -32,11 +32,13 @@ Personal mobile-first web app for **weight loss**: hero metric = **kcal deficit 
    - **Product strategy** → `docs/product.md`
    - **Positioning / risks** → `docs/vision.md`
    - **Formulas, MVP, screens, owner decisions** → `docs/product-spec.md`
+   - **Visual identity, UI, CSS, assets** → `docs/brand-book.md` (**mandatory** for any UI/visual work)
    - **Stack** → `docs/stack.md` (when chosen)
 2. **Do not bloat** `AGENTS.md` — add detail to `docs/`, not here.
 3. **MVP discipline:** no FatSecret, Health APIs, AI coach, cloud sync, CI/doc-linters, or exec-plan folders unless the owner asks.
 4. When product logic or formulas change, update `docs/product-spec.md` and mention it briefly to the user in their language.
 5. Prefer small, clear changes; grow docs incrementally with development.
+6. **Visual work:** follow `docs/brand-book.md` (colors, type, spacing, components, motion). Do not invent a new palette or “template” look per screen.
 
 ---
 
@@ -60,6 +62,7 @@ Personal mobile-first web app for **weight loss**: hero metric = **kcal deficit 
 | Strategy, principles, anti-goals, roadmap | `docs/product.md` |
 | Positioning, differentiation, risks | `docs/vision.md` |
 | Formulas, screens, acceptance criteria | `docs/product-spec.md` |
+| Brand, UI tokens, logo, anti-patterns | `docs/brand-book.md` |
 | Tech stack (TBD) | `docs/stack.md` |
 | Docs index | `docs/README.md` |
 

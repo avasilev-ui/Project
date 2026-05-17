@@ -81,6 +81,8 @@ After a goal is reached: user sets **new loss goal** or **maintenance** — same
 
 **Restrained but stylish** — like a well-designed research tool: no emoji coaching, no hype. The hero scale carries most of the personality.
 
+Visual identity (colors, typography, UI components, logo): [`brand-book.md`](./brand-book.md).
+
 In-app copy language: **Russian** (see `product-spec.md`).
 
 ---

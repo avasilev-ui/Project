@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burn — Brandbook (Carbon Precision Minimalism)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================
+       BURN — CARBON PRECISION MINIMALISM
+       See docs/brand-book.md
+       ======================================== */
+
+    :root {
+      --carbon-black: #050505;
+      --graphite-black: #111111;
+      --dark-metal: #1c1c1e;
+      --steel-gray: #8e8e93;
+      --silver-white: #f5f5f7;
+      --pure-white: #ffffff;
+      --titanium: #d1d1d6;
+      --metallic-line: linear-gradient(90deg, #3a3a3c 0%, #f5f5f7 50%, #6e6e73 100%);
+      --success-muted: rgba(48, 209, 88, 0.8);
+      --warning-muted: rgba(255, 214, 10, 0.8);
+      --danger-muted: rgba(255, 69, 58, 0.85);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.14);
+      --shadow-elevated: 0 4px 24px rgba(0, 0, 0, 0.45);
+      --focus-glow: rgba(209, 209, 214, 0.15);
+
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+      --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+      --text-xs: 0.75rem;
+      --text-sm: 0.875rem;
+      --text-base: 1rem;
+      --text-lg: 1.125rem;
+      --text-xl: 1.25rem;
+      --text-2xl: 1.5rem;
+      --text-3xl: 2rem;
+      --text-4xl: 2.5rem;
+      --text-5xl: 3.5rem;
+      --text-hero: clamp(3rem, 8vw, 4rem);
+
+      --leading-tight: 1.15;
+      --leading-normal: 1.5;
+      --leading-relaxed: 1.55;
+
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-btn: 10px;
+      --radius-full: 9999px;
+
+      --transition-fast: 150ms cubic-bezier(0.25, 0.1, 0.25, 1);
+      --transition-normal: 250ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: var(--text-base);
+      line-height: var(--leading-normal);
+      color: var(--silver-white);
+      background: var(--carbon-black);
+      min-height: 100vh;
+    }
+
+    ::selection {
+      background: var(--titanium);
+      color: var(--carbon-black);
+    }
+
+    /* Carbon weave — rare accent */
+    .carbon-bg {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carbon-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.1;
+      background-image:
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 3px,
+          rgba(255, 255, 255, 0.03) 3px,
+          rgba(255, 255, 255, 0.03) 4px
+        ),
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 3px,
+          rgba(255, 255, 255, 0.04) 3px,
+          rgba(255, 255, 255, 0.04) 5px
+        );
+      pointer-events: none;
+    }
+
+    .carbon-bg::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--metallic-line);
+      opacity: 0.6;
+    }
+
+    .carbon-bg > * { position: relative; z-index: 1; }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      line-height: var(--leading-tight);
+      color: var(--pure-white);
+      letter-spacing: -0.02em;
+    }
+
+    h1 { font-size: var(--text-4xl); font-weight: 700; letter-spacing: -0.03em; }
+    h2 { font-size: var(--text-3xl); }
+    h3 { font-size: var(--text-2xl); }
+    h4 { font-size: var(--text-xl); }
+    h5 { font-size: var(--text-lg); font-weight: 500; }
+    h6 { font-size: var(--text-base); font-weight: 500; }
+
+    p { color: var(--silver-white); line-height: var(--leading-relaxed); }
+    .text-sm { font-size: var(--text-sm); }
+    .text-xs { font-size: var(--text-xs); }
+    .text-muted { color: var(--steel-gray); }
+    .text-titanium { color: var(--titanium); }
+    .text-strong { color: var(--pure-white); }
+
+    .wordmark {
+      font-size: var(--text-5xl);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--pure-white);
+    }
+
+    .tagline {
+      font-size: var(--text-lg);
+      color: var(--steel-gray);
+      font-weight: 400;
+      letter-spacing: 0;
+      max-width: 36rem;
+    }
+
+    .metallic-text {
+      background: var(--metallic-line);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    code, .mono {
+      font-family: var(--font-mono);
+      font-variant-numeric: tabular-nums;
+    }
+
+    code:not(pre code) {
+      background: var(--dark-metal);
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
+      color: var(--titanium);
+      font-size: 0.85em;
+    }
+
+    a {
+      color: var(--titanium);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--transition-fast);
+    }
+
+    a:hover { border-bottom-color: var(--titanium); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      min-height: 44px;
+      font-family: var(--font-sans);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-btn);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .btn-primary {
+      background: var(--pure-white);
+      color: var(--carbon-black);
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: var(--silver-white);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--silver-white);
+      border-color: var(--border-subtle);
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      border-color: var(--border-strong);
+      color: var(--pure-white);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--silver-white);
+    }
+
+    .btn-ghost:hover:not(:disabled) { color: var(--titanium); }
+
+    .btn-danger {
+      background: transparent;
+      color: var(--danger-muted);
+      border-color: rgba(255, 69, 58, 0.35);
+    }
+
+    .btn-danger:hover:not(:disabled) {
+      border-color: var(--danger-muted);
+    }
+
+    .btn-capsule { border-radius: var(--radius-full); }
+    .btn-sm { min-height: 36px; padding: var(--space-2) var(--space-4); font-size: var(--text-xs); }
+    .btn-lg { padding: var(--space-4) var(--space-8); }
+
+    /* Inputs */
+    .input {
+      width: 100%;
+      font-family: var(--font-sans);
+      font-size: var(--text-base);
+      min-height: 44px;
+      padding: var(--space-3) var(--space-4);
+      background: var(--dark-metal);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      color: var(--silver-white);
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .input::placeholder { color: var(--steel-gray); }
+
+    .input:focus {
+      outline: none;
+      border-color: var(--titanium);
+      box-shadow: 0 0 0 3px var(--focus-glow);
+    }
+
+    .input-mono {
+      font-family: var(--font-mono);
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .input-error { border-color: rgba(255, 69, 58, 0.5); }
+
+    .label {
+      display: block;
+      font-size: var(--text-xs);
+      font-weight: 500;
+      color: var(--steel-gray);
+      margin-bottom: var(--space-2);
+      letter-spacing: 0.02em;
+    }
+
+    .help-text {
+      font-size: var(--text-xs);
+      color: var(--steel-gray);
+      margin-top: var(--space-2);
+    }
+
+    .help-text.error { color: var(--danger-muted); }
+
+    /* Cards */
+    .card {
+      background: var(--graphite-black);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .card-hero { border-radius: var(--radius-lg); }
+
+    .card-body { padding: var(--space-5); }
+    .card-header {
+      padding: var(--space-4) var(--space-5);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .card-footer {
+      padding: var(--space-4) var(--space-5);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .card-premium {
+      position: relative;
+    }
+
+    .divider-metallic {
+      height: 1px;
+      background: var(--metallic-line);
+      border: none;
+      opacity: 0.7;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      font-size: var(--text-xs);
+      font-weight: 500;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.02em;
+      text-transform: none;
+    }
+
+    .badge-default {
+      background: var(--dark-metal);
+      color: var(--steel-gray);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .badge-titanium {
+      background: rgba(209, 209, 214, 0.1);
+      color: var(--titanium);
+      border: 1px solid rgba(209, 209, 214, 0.2);
+    }
+
+    .badge-success {
+      color: var(--success-muted);
+      border: 1px solid rgba(48, 209, 88, 0.25);
+      background: transparent;
+    }
+
+    .badge-warning {
+      color: var(--warning-muted);
+      border: 1px solid rgba(255, 214, 10, 0.25);
+      background: transparent;
+    }
+
+    /* Progress */
+    .progress {
+      height: 4px;
+      background: var(--dark-metal);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: var(--metallic-line);
+      border-radius: var(--radius-full);
+      transition: width 400ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .progress-bar.titanium { background: var(--titanium); }
+
+    /* Hero metric */
+    .hero-metric {
+      text-align: center;
+      padding: var(--space-12) var(--space-6);
+    }
+
+    .hero-label {
+      font-size: var(--text-sm);
+      color: var(--steel-gray);
+      margin-bottom: var(--space-3);
+    }
+
+    .hero-value {
+      font-family: var(--font-mono);
+      font-size: var(--text-hero);
+      font-weight: 600;
+      color: var(--pure-white);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .hero-unit {
+      font-size: var(--text-xl);
+      color: var(--steel-gray);
+      font-weight: 400;
+      margin-left: var(--space-2);
+    }
+
+    .hero-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--space-8);
+      margin-top: var(--space-8);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .hero-stat-label {
+      font-size: var(--text-xs);
+      color: var(--steel-gray);
+      margin-bottom: var(--space-1);
+    }
+
+    .hero-stat-value {
+      font-family: var(--font-mono);
+      font-size: var(--text-lg);
+      font-weight: 500;
+      color: var(--silver-white);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Ring progress (hero) */
+    .ring-wrap {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto var(--space-6);
+    }
+
+    .ring-svg { transform: rotate(-90deg); }
+    .ring-track { stroke: var(--dark-metal); }
+    .ring-fill {
+      stroke: url(#metallicGradient);
+      stroke-linecap: round;
+      transition: stroke-dashoffset 600ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .ring-center {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Stat blocks */
+    .stat-value {
+      font-family: var(--font-mono);
+      font-size: var(--text-3xl);
+      font-weight: 600;
+      color: var(--pure-white);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stat-label {
+      font-size: var(--text-xs);
+      color: var(--steel-gray);
+      margin-top: var(--space-1);
+    }
+
+    /* Nav */
+    .nav {
+      display: inline-flex;
+      gap: var(--space-1);
+      padding: var(--space-1);
+      background: var(--graphite-black);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+    }
+
+    .nav-item {
+      font-size: var(--text-sm);
+      font-weight: 500;
+      padding: var(--space-2) var(--space-4);
+      color: var(--steel-gray);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: color var(--transition-fast);
+    }
+
+    .nav-item:hover { color: var(--silver-white); }
+
+    .nav-item.active {
+      color: var(--titanium);
+      background: var(--dark-metal);
+    }
+
+    .tab-bar {
+      display: flex;
+      justify-content: space-around;
+      padding: var(--space-3) var(--space-4);
+      background: var(--graphite-black);
+      border-top: 1px solid var(--border-subtle);
+      max-width: 420px;
+    }
+
+    .tab-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-1);
+      font-size: 10px;
+      color: var(--steel-gray);
+    }
+
+    .tab-item.active { color: var(--titanium); }
+
+    .tab-icon {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    /* Data row */
+    .data-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 44px;
+      padding: var(--space-3) var(--space-4);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .data-row:last-child { border-bottom: none; }
+
+    /* Monogram */
+    .monogram {
+      width: 44px;
+      height: 44px;
+      border: 1.5px solid var(--titanium);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: var(--text-lg);
+      color: var(--pure-white);
+    }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: var(--space-12) var(--space-6);
+    }
+
+    .empty-state-title {
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-2);
+    }
+
+    /* Anti-pattern panel */
+    .anti-panel {
+      border: 1px dashed rgba(255, 69, 58, 0.35);
+      background: rgba(255, 69, 58, 0.04);
+      border-radius: var(--radius-md);
+      padding: var(--space-5);
+    }
+
+    .anti-panel h5 { color: var(--danger-muted); margin-bottom: var(--space-3); }
+
+    .anti-list {
+      list-style: none;
+      font-size: var(--text-sm);
+      color: var(--steel-gray);
+    }
+
+    .anti-list li {
+      padding: var(--space-2) 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .anti-list li:last-child { border-bottom: none; }
+
+    pre {
+      background: var(--graphite-black);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: var(--space-5);
+      overflow-x: auto;
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
+    }
+
+    pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      color: var(--silver-white);
+    }
+
+    /* Layout */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    .grid { display: grid; gap: var(--space-4); }
+    .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+    @media (max-width: 768px) {
+      .grid-cols-2, .grid-cols-3, .grid-cols-4 { grid-template-columns: 1fr; }
+    }
+
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .flex-wrap { flex-wrap: wrap; }
+    .items-center { align-items: center; }
+    .justify-between { justify-content: space-between; }
+    .gap-4 { gap: var(--space-4); }
+    .gap-6 { gap: var(--space-6); }
+    .gap-8 { gap: var(--space-8); }
+    .mb-2 { margin-bottom: var(--space-2); }
+    .mb-4 { margin-bottom: var(--space-4); }
+    .mb-6 { margin-bottom: var(--space-6); }
+    .mb-8 { margin-bottom: var(--space-8); }
+    .mt-4 { margin-top: var(--space-4); }
+    .mt-6 { margin-top: var(--space-6); }
+    .py-8 { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+    .py-12 { padding-top: var(--space-12); padding-bottom: var(--space-12); }
+
+    .demo-section {
+      padding: var(--space-12) 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .demo-section:last-of-type { border-bottom: none; }
+
+    .demo-title {
+      font-size: var(--text-2xl);
+      margin-bottom: var(--space-8);
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    .demo-title::before {
+      content: "";
+      width: 3px;
+      height: 1em;
+      background: var(--metallic-line);
+      border-radius: 2px;
+    }
+
+    .demo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-6);
+    }
+
+    .demo-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .demo-label {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      color: var(--steel-gray);
+    }
+
+    .color-swatch {
+      width: 72px;
+      height: 72px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .principle-card {
+      padding: var(--space-4);
+      background: var(--graphite-black);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+    }
+
+    .principle-card strong {
+      display: block;
+      color: var(--pure-white);
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-2);
+    }
+
+    .principle-card span {
+      font-size: var(--text-xs);
+      color: var(--steel-gray);
+    }
+
+    .phone-frame {
+      max-width: 390px;
+      margin: 0 auto;
+      border: 1px solid var(--border-strong);
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--carbon-black);
+      box-shadow: var(--shadow-elevated);
+    }
+
+    .phone-status {
+      height: 44px;
+      background: var(--carbon-black);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" aria-hidden="true">
+    <defs>
+      <linearGradient id="metallicGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#3A3A3C"/>
+        <stop offset="50%" stop-color="#F5F5F7"/>
+        <stop offset="100%" stop-color="#6E6E73"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div class="container">
+    <!-- Cover -->
+    <header class="carbon-bg py-12 mb-4">
+      <p class="text-xs text-muted mb-4" style="letter-spacing: 0.06em;">CARBON PRECISION MINIMALISM · v0.1</p>
+      <h1 class="wordmark mb-4">Burn</h1>
+      <p class="tagline">Система управления энергобалансом. Премиальный tech-инструмент — не фитнес-мотивация.</p>
+      <p class="text-sm text-muted mt-4">Dark only · Titanium accent · <a href="brand-book.md">brand-book.md</a></p>
+    </header>
+
+    <!-- Principles -->
+    <section class="demo-section">
+      <h2 class="demo-title">Принципы</h2>
+      <div class="principles-grid">
+        <div class="principle-card"><strong>Контент первым</strong><span>Хром тихий, цифры громкие</span></div>
+        <div class="principle-card"><strong>Дисциплина</strong><span>Роскошь = воздух и типографика</span></div>
+        <div class="principle-card"><strong>90/10</strong><span>Ч/б/серый + редкий металл</span></div>
+        <div class="principle-card"><strong>Карбон — украшение</strong><span>Не под длинным текстом</span></div>
+        <div class="principle-card"><strong>Читаемый dark</strong><span>WCAG AA обязателен</span></div>
+        <div class="principle-card"><strong>Без цирка</strong><span>Спокойная анимация</span></div>
+      </div>
+    </section>
+
+    <!-- Colors -->
+    <section class="demo-section">
+      <h2 class="demo-title">Цвета</h2>
+      <h5 class="mb-4 text-muted">Фоны</h5>
+      <div class="demo-grid mb-8">
+        <div class="demo-item">
+          <div class="color-swatch" style="background: var(--carbon-black);"></div>
+          <span class="demo-label">Carbon Black</span>
+          <code class="text-xs">#050505</code>
+        </div>
+        <div class="demo-item">
+          <div class="color-swatch" style="background: var(--graphite-black);"></div>
+          <span class="demo-label">Graphite Black</span>
+          <code class="text-xs">#111111</code>
+        </div>
+        <div class="demo-item">
+          <div class="color-swatch" style="background: var(--dark-metal);"></div>
+          <span class="demo-label">Dark Metal</span>
+          <code class="text-xs">#1C1C1E</code>
+        </div>
+      </div>
+      <h5 class="mb-4 text-muted">Текст и акцент</h5>
+      <div class="demo-grid">
+        <div class="demo-item">
+          <div class="color-swatch" style="background: var(--steel-gray);"></div>
+          <span class="demo-label">Steel Gray</span>
+          <code class="text-xs">#8E8E93</code>
+        </div>
+        <div class="demo-item">
+          <div class="color-swatch" style="background: var(--silver-white);"></div>
+          <span class="demo-label">Silver White</span>
+          <code class="text-xs">#F5F5F7</code>
+        </div>
+        <div class="demo-item">
+          <div class="color-swatch" style="background: var(--titanium);"></div>
+          <span class="demo-label">Titanium</span>
+          <code class="text-xs">#D1D1D6</code>
+        </div>
+        <div class="demo-item">
+          <div class="color-swatch" style="background: var(--metallic-line);"></div>
+          <span class="demo-label">Metallic Line</span>
+          <code class="text-xs">gradient</code>
+        </div>
+      </div>
+      <hr class="divider-metallic mt-8">
+    </section>
+
+    <!-- Typography -->
+    <section class="demo-section">
+      <h2 class="demo-title">Типографика</h2>
+      <p class="text-sm text-muted mb-6">Inter — интерфейс · IBM Plex Mono — метрики</p>
+      <div class="mb-8">
+        <span class="demo-label mb-4" style="display:block;">Заголовки</span>
+        <h1 class="mb-2">Заголовок 1</h1>
+        <h2 class="mb-2">Заголовок 2</h2>
+        <h3 class="mb-2">Заголовок 3</h3>
+        <h4 class="mb-2">Заголовок 4</h4>
+      </div>
+      <div class="mb-8">
+        <span class="demo-label mb-4" style="display:block;">Тон (хорошо)</span>
+        <h3 class="mb-2">Система, которая держит форму под нагрузкой.</h3>
+        <p class="text-muted">Минимум действий. Максимум устойчивости.</p>
+      </div>
+      <div class="mb-8">
+        <span class="demo-label mb-4" style="display:block;">Метрика (mono)</span>
+        <p class="hero-value" style="font-size: var(--text-4xl);">124 380 <span class="hero-unit">ккал</span></p>
+      </div>
+      <div>
+        <span class="demo-label mb-4" style="display:block;">Код</span>
+        <pre><code><span style="color: var(--steel-gray);">// remaining kcal to goal</span>
+remaining = max(0, totalNeeded - cumulativeDeficit)</code></pre>
+      </div>
+    </section>
+
+    <!-- Logo -->
+    <section class="demo-section">
+      <h2 class="demo-title">Логотип</h2>
+      <div class="flex gap-8 items-center flex-wrap">
+        <div>
+          <span class="demo-label mb-4" style="display:block;">Wordmark</span>
+          <span class="wordmark" style="font-size: 2.5rem;">Burn</span>
+        </div>
+        <div>
+          <span class="demo-label mb-4" style="display:block;">Monogram</span>
+          <div class="monogram">B</div>
+        </div>
+        <div>
+          <span class="demo-label mb-4" style="display:block;">Metallic stroke</span>
+          <span class="wordmark metallic-text" style="font-size: 2rem;">Burn</span>
+        </div>
+      </div>
+      <p class="text-sm text-muted mt-6">Без: пламя, гантели, молнии, черепа, 3D-хром.</p>
+    </section>
+
+    <!-- Hero / Product preview -->
+    <section class="demo-section">
+      <h2 class="demo-title">Hero-экран (превью)</h2>
+      <div class="phone-frame">
+        <div class="phone-status"></div>
+        <div class="carbon-bg">
+          <div class="hero-metric" style="padding-top: var(--space-8);">
+            <div class="ring-wrap">
+              <svg class="ring-svg" width="200" height="200" viewBox="0 0 200 200">
+                <circle class="ring-track" cx="100" cy="100" r="88" fill="none" stroke-width="6"/>
+                <circle class="ring-fill" cx="100" cy="100" r="88" fill="none" stroke-width="6"
+                  stroke-dasharray="553" stroke-dashoffset="180"/>
+              </svg>
+              <div class="ring-center">
+                <span class="hero-label">До цели осталось</span>
+                <span class="hero-value" style="font-size: 2rem;">48 920</span>
+                <span class="hero-unit">ккал</span>
+              </div>
+            </div>
+            <div class="hero-row" style="margin: 0; padding: var(--space-4) var(--space-6) var(--space-8);">
+              <div>
+                <div class="hero-stat-label">Дефицит за неделю</div>
+                <div class="hero-stat-value">−4 200 <span class="text-muted text-sm">/ −3 500</span></div>
+              </div>
+              <div>
+                <div class="hero-stat-label">Вес (7 дн.)</div>
+                <div class="hero-stat-value">78,4 кг</div>
+              </div>
+              <div>
+                <div class="hero-stat-label">Прогноз</div>
+                <div class="hero-stat-value text-sm">12 июн – 28 июл</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="tab-bar">
+          <span class="tab-item active">
+            <svg class="tab-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
+            Главная
+          </span>
+          <span class="tab-item">
+            <svg class="tab-icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+            День
+          </span>
+          <span class="tab-item">
+            <svg class="tab-icon" viewBox="0 0 24 24"><path d="M6 18V8M12 18V4M18 18v-6"/></svg>
+            Отчёт
+          </span>
+          <span class="tab-item">
+            <svg class="tab-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+            Ещё
+          </span>
+        </nav>
+      </div>
+      <p class="text-xs text-muted mt-4" style="text-align:center;">Оценка, не измерение. Тап по hero → формула и дисклеймер.</p>
+    </section>
+
+    <!-- Buttons -->
+    <section class="demo-section">
+      <h2 class="demo-title">Кнопки</h2>
+      <div class="demo-grid mb-8">
+        <div class="demo-item"><span class="demo-label">Primary</span><button class="btn btn-primary">Сохранить</button></div>
+        <div class="demo-item"><span class="demo-label">Secondary</span><button class="btn btn-secondary">Подробнее</button></div>
+        <div class="demo-item"><span class="demo-label">Ghost</span><button class="btn btn-ghost">Отмена</button></div>
+        <div class="demo-item"><span class="demo-label">Danger</span><button class="btn btn-danger">Удалить данные</button></div>
+        <div class="demo-item"><span class="demo-label">Capsule CTA</span><button class="btn btn-primary btn-capsule">Новая цель</button></div>
+      </div>
+    </section>
+
+    <!-- Forms -->
+    <section class="demo-section">
+      <h2 class="demo-title">Поля ввода</h2>
+      <div class="grid grid-cols-2 gap-8">
+        <div>
+          <label class="label">Калории за день</label>
+          <input type="text" class="input input-mono" placeholder="0" value="1 840">
+        </div>
+        <div>
+          <label class="label">Вес, кг</label>
+          <input type="text" class="input input-error" value="abc">
+          <p class="help-text error">Введите число</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges -->
+    <section class="demo-section">
+      <h2 class="demo-title">Бейджи</h2>
+      <div class="demo-grid">
+        <span class="badge badge-default">Оценка</span>
+        <span class="badge badge-titanium">7 дней</span>
+        <span class="badge badge-success">Цель достигнута</span>
+        <span class="badge badge-warning">Плато</span>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="demo-section">
+      <h2 class="demo-title">Карточки</h2>
+      <div class="grid grid-cols-3 gap-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="mb-2">Базовая</h5>
+            <p class="text-sm text-muted">Graphite + border 8%.</p>
+          </div>
+        </div>
+        <div class="card card-hero carbon-bg">
+          <div class="card-body">
+            <h5 class="mb-2">С карбоном</h5>
+            <p class="text-sm text-muted">Редкий акцент, не под текстом.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="text-sm text-muted">Модуль ВОЗ</span></div>
+          <div class="card-body">
+            <h5 class="mb-2">Вторичный блок</h5>
+            <p class="text-sm text-muted">Визуально тише hero.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data list -->
+    <section class="demo-section">
+      <h2 class="demo-title">Список данных</h2>
+      <div class="card" style="max-width: 420px;">
+        <div class="data-row">
+          <span class="text-sm">Расход</span>
+          <span class="mono text-strong">2 340 ккал</span>
+        </div>
+        <div class="data-row">
+          <span class="text-sm">Приход</span>
+          <span class="mono text-strong">1 840 ккал</span>
+        </div>
+        <div class="data-row">
+          <span class="text-sm">Дефицит</span>
+          <span class="mono text-titanium">−500 ккал</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="demo-section">
+      <h2 class="demo-title">Статистика</h2>
+      <div class="card">
+        <div class="card-body">
+          <div class="grid grid-cols-4 gap-8">
+            <div><div class="stat-value">−4 200</div><div class="stat-label">Дефицит / нед</div></div>
+            <div><div class="stat-value">78,4</div><div class="stat-label">кг (7 дн.)</div></div>
+            <div><div class="stat-value text-titanium">92%</div><div class="stat-label">План дефицита</div></div>
+            <div><div class="stat-value">48 920</div><div class="stat-label">ккал до цели</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nav -->
+    <section class="demo-section">
+      <h2 class="demo-title">Навигация</h2>
+      <nav class="nav">
+        <span class="nav-item active">Главная</span>
+        <span class="nav-item">День</span>
+        <span class="nav-item">Отчёт</span>
+        <span class="nav-item">Настройки</span>
+      </nav>
+    </section>
+
+    <!-- Progress -->
+    <section class="demo-section">
+      <h2 class="demo-title">Прогресс</h2>
+      <div class="flex flex-col gap-6" style="max-width: 400px;">
+        <div>
+          <span class="demo-label mb-2" style="display:block;">Metallic — путь к цели</span>
+          <div class="progress"><div class="progress-bar" style="width: 62%;"></div></div>
+        </div>
+        <div>
+          <span class="demo-label mb-2" style="display:block;">Titanium — недельный план</span>
+          <div class="progress"><div class="progress-bar titanium" style="width: 92%;"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Empty state -->
+    <section class="demo-section">
+      <h2 class="demo-title">Пустое состояние</h2>
+      <div class="card">
+        <div class="empty-state">
+          <h5 class="empty-state-title">Нет записей за этот день</h5>
+          <p class="text-sm text-muted" style="max-width: 280px; margin: 0 auto;">Добавьте приём пищи или активность, чтобы увидеть дефицит.</p>
+          <button class="btn btn-primary mt-6">Добавить</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anti-patterns -->
+    <section class="demo-section">
+      <h2 class="demo-title">Запрещено (anti-vibecoding)</h2>
+      <div class="anti-panel">
+        <h5>Не использовать в Burn</h5>
+        <ul class="anti-list">
+          <li>Неоновые cyan/magenta градиенты и glow-тени</li>
+          <li>Фиолетовые «AI» карточки и sparkle-иконки</li>
+          <li>Кислотные акценты, пламя, черепа, «РАЗОРВИ ПОТЕНЦИАЛ»</li>
+          <li>Emoji в пустых состояниях и геймификация streaks</li>
+          <li>Карбон под мелким текстом и на всём экране</li>
+          <li>Системный синий #0A84FF как бренд-акцент</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="py-12" style="border-top: 1px solid var(--border-subtle);">
+      <p class="text-sm text-muted" style="text-align: center;">
+        Burn · Carbon Precision Minimalism · <code>docs/brand-book.md</code>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
