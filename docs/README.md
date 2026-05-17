@@ -8,6 +8,7 @@ Read in order:
 2. [`vision.md`](./vision.md) — positioning, differentiation, risks.
 3. [`product-spec.md`](./product-spec.md) — formulas, MVP scope, screens, owner decisions.
 4. [`brand-book.md`](./brand-book.md) — visual identity, UI tokens, logo (Burn), motion, anti-patterns.
-5. [`stack.md`](./stack.md) — technology choices (filled when decided).
+5. [`stack.md`](./stack.md) — technology choices.
+6. [`plans/`](./plans/) — implementation plans (phase-by-phase execution; see [`plans/README.md`](./plans/README.md)).
 
 **Rule:** New topics get a new file here. Do not turn `AGENTS.md` into an encyclopedia.

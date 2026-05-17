@@ -1,3 +1,6 @@
+# Local Node toolchain (optional bootstrap)
+.node-local/
+
 # Dependencies
 node_modules/
 

@@ -86,3 +86,4 @@ Exact install list will live in project `package.json` after scaffold.
 | Date | Decision |
 |------|----------|
 | 2026-05 | Stack approved: Vite, React, TypeScript, PWA plugin, Zustand, Dexie, Tailwind, static host, no backend MVP |
+| 2026-05-17 | App scaffold: `src/{domain,data,store,ui,lib}`, Vitest domain tests, Dexie v1, route stubs, PWA manifest **Burn** |
